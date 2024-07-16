@@ -1,13 +1,135 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: teal; /* Set background color to teal */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-size: cover;
+  
+}
+.span{
+    color:blue;
+}
+
+.gameboard {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 1px black;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  border: solid 1px black;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.square:hover {
+  background-color: #f0f0f0;
+}
+
+.circle, .cross {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  border: 15px solid blue;
+  box-sizing: border-box;
+}
+
+.cross {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  transform: rotate(45deg);
+}
+
+.cross:before, .cross:after {
+  content: "";
+  position: absolute;
+  background-color: red;
+}
+
+.cross:before {
+  left: 50%;
+  width: 30%;
+  height: 100%;
+  margin-left: -15%;
+}
+
+.cross:after {
+  top: 50%;
+  height: 30%;
+  width: 100%;
+  margin-top: -15%;
+}
+
+p {
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.scorecard {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  margin: 20px 0;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 0px;
+  padding: 0px;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.dialog {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: lightyellow;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
